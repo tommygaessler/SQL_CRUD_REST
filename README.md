@@ -28,12 +28,30 @@ Build a schema for students, teachers, and "classes", in g30. Create a new file 
   - Add at least 3 different classes
 - UPDATE
   - Change the number of jobs you've applied to 3.
-  - Change the number of jobs a classmate has applied to 5.
+  UPDATE students SET jobs_applied=3 WHERE first_name='Tommy';
+
+  - Change the number of jobs a classmate has applied to 5.  
+  UPDATE students SET jobs_applied=3 WHERE first_name='Tommy';
+
   - Change who's teaching one of the classes.
+  UPDATE classes
+  SET teacher_id = (SELECT id FROM teachers WHERE last_name='Herman') WHERE subject='business';
+
+  SET teacher_id = (SELECT id FROM teachers WHERE last_name = 'Herman') WHERE subject = 'business';
 - SELECT
   - Select all students who have applied to at least 1 job.
+  SELECT * FROM students WHERE jobs_applied > 1;
+
   - Select all teachers whose last names are Herman or Hassara.
+  SELECT * FROM teachers WHERE last_name IN ('Herman', 'Hassara');
+
   - Select all classes taught by teachers whose last names are Reid or Hajek.
+
+  SELECT * FROM classes
+  WHERE teacher_id = (SELECT id FROM teachers WHERE last_name = 'Reid') OR teacher_id=(SELECT id FROM teachers WHERE last_name = 'Hajek');
+
+
+
 - DELETE
   - Remove all students who have applied to more than 5 jobs.
   - Remove the class with your least favorite subject.

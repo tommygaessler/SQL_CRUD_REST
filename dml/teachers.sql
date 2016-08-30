@@ -8,3 +8,5 @@ VALUES
   ('Wes', 'Reid'),
   ('Robby', 'Hajek'),
   ('Ben', 'Hassara');
+
+  -- INSERT INTO teachers (first_name, last_name) VALUES ('Matthew', 'Leach');
