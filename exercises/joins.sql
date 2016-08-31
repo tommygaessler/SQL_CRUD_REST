@@ -44,6 +44,7 @@ GROUP BY classes.id, classes.subject;
 
 
 
+
 -- SELECT * FROM a
 -- INNER JOIN b
 -- ON a.name = b.name;
