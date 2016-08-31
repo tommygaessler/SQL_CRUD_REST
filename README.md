@@ -54,5 +54,13 @@ Build a schema for students, teachers, and "classes", in g30. Create a new file 
 
 - DELETE
   - Remove all students who have applied to more than 5 jobs.
+
+  DELETE FROM students WHERE jobs_applied > 5;
+
   - Remove the class with your least favorite subject.
+
+  DELETE FROM classes WHERE subject='Janky Python';
+
   - Finally, you're hired! Remove yourself from the students table!
+
+  DELETE FROM students WHERE first_name='Tommy';
